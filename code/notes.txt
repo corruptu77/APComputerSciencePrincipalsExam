@@ -1,0 +1,44 @@
+Idea 1: A encryption thing
+    2 functions: encrypt and decrypt
+        Encrypt: Picks a random number, that number is the set base, is kept as a variable. 
+            When the code gets to a new word it chooses another number.
+            The number should be 1 to 26. 
+            Each letter of the alphabet should have a set number [A = 1, B = 2, C = 3, etc...]
+            The base number is added to the last letter [ABCDE => 12345] => [base = 3, 5+3=8]
+            That letter is added to the previous letter as well [ABCDE => 12345] => [base = 3, 5+3=8
+                                                                                            4+8=12]
+            This keeps going until the first letter is exchanged [ABCDE base = 10; A = 1, B = 2, C = 3, D = 4, E = 5,
+                                                                        5+10=15
+                                                                        15+4=19
+                                                                        19+3=22
+                                                                        22+2=24
+                                                                        24+1=25
+                                                                        base=10]
+            Now convert the new numbers (including the base number) into letters. Any number greater than 26 is subtracted by 26. The base number then becomes the first number.
+                                                                        [10 = J 
+                                                                        15 = O 
+                                                                        19 = S 
+                                                                        22 = V 
+                                                                        24 = X 
+                                                                        25 = Y]
+                ABCDE => JOSVXY
+            The encrypted word now is placed into another variable. When all the words have been encrypted, it exports it.
+        Decrypt: Will take the first letter of the encrypted word (Is not actually part of the word, but is part of the key. The first letter is the base number)
+            Find the associated number that comes with the first number [1 = A, 2 = B, 3 = C, etc...]
+            Do the same for the other letters, convert into numbers. [JOSVXY = 10, 15, 19, 22, 24, 25]
+            subtract the base number from all the associated numbers [
+                                                                        15-10=5
+                                                                        19=10=9
+                                                                        22-10=12
+                                                                        24-10=14
+                                                                        25-10=15
+            ]
+            If there is a number less than 1, add 26 to the number.
+            Then, take the last number, and subtract it by the previous number, but keep the previous number. Repeat until the first letter, which you don't do anything[
+                                                                        15-14=1
+                                                                        14-12=2
+                                                                        12-9=3
+                                                                        9-5=4
+                                                                        5=5
+            ]
+            Convert the new numbers into letters [1=A,2=B,3=C,4=D,5=E, code = ABCDE]
