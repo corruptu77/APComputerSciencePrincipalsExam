@@ -53,8 +53,10 @@ for (var i = 0; i < 26; i++) {
 
 function encrypt(word) {
     var base = Math.floor(Math.random() * 26) + 1;
+    var topBase = Math.floor(Math.random() * 26) + 1;
     var nums = [];
-    for (var i = 0; i < word.length; i++) {
+    for (var a = 0; a < topBase; a++) {
+        for (var i = 0; i < word.length; i++) {
         nums.push(crypt[word[i].toLowerCase()]);
     }
     var encrypted_nums = [];
@@ -74,6 +76,7 @@ function encrypt(word) {
         if (n === 0) n = 26;
         encrypted += String.fromCharCode(n + 64);
     }
+}
     return encrypted;
 }
 document.getElementById("encryptButton").addEventListener("click", function() {
