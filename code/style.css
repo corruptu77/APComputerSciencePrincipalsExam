@@ -1,6 +1,7 @@
 html, body {
-  margin: 0;
+  margin: 15px;
   padding: 0;
+  font-family: "Segoe UI", sans-serif;
 }
 canvas {
   display: block;
@@ -9,5 +10,17 @@ canvas {
 .title {
   font-family: "monospace";
   background-color: #00E453;
-  color: #FFFFFF
+  color: #FFFFFF;
+}
+
+button {
+  background-color: #00E453;
+  color: #FFFFFF;
+  height: 40px;
+
+}
+
+textarea {
+  width: 300px;
+  height: 200px;
 }
